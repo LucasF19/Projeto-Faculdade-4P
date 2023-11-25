@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap");
+
+:root {
+  --title-color: #6A22AC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jaldi", sans-serif;
+}
+
+.container-login {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-inputs {
+  width: 510px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.title-styled {
+  position: relative;
+  color: var(--title-color);
+  font-size: 60px;
+  text-align: center;
+  width: 408px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.title-styled::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--title-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* inptus */
+.inputs-box label{
+  font-size: 22px;
+  color: #3A3A3A;
+}
+
+.inputs-box input:focus {
+  border-bottom: 1px solid var(--title-color) !important;
+  box-shadow: 0 1px 0 0 var(--title-color) !important;
+}
+
+.input-field label {
+  color: #000;
+}
+
+.inputs-box input{
+  background-color: #ebebeb;
+  padding: 20px;
+}
+
+.inputs-box input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+.login-box{
+  margin-bottom: 40px;
+}
+
+/* radio group */
+.group-users {
+  margin-top: 15px;
+  display: flex;
+}
+
+[type="radio"] + span {
+  padding-left: 28px !important;
+}
+
+[type="radio"]:checked + span:after{
+  background-color: var(--title-color);
+  border: 2px solid var(--title-color);
+}
+
+.group-users label span{
+  font-size: 18px !important;
+}
+
+.group-users p:first-child {
+  margin-right: 25px;
+}
+
+/* Buttons */
+.buttons-box {
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-box button,
+.buttons-box a {
+  font-size: 18px;
+  border-radius: 40px;
+  height: 50px;
+  text-transform: none;
+  width: 100%;
+  box-shadow: none;
+}
+
+.buttons-box button {
+  background-color: var(--title-color);
+  color: white;
+}
+
+.buttons-box button:hover {
+  background-color: #310a56;
+}
+
+.buttons-box button:focus{
+  background-color: #1d0632;
+}
+
+.buttons-box a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--title-color);
+  background-color: transparent;
+  border: 2px solid var(--title-color);
+}
+
+.buttons-box a:hover {
+  color: white;
+  background-color: var(--title-color);
+}

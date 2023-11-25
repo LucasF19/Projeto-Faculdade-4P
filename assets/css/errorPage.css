@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap");
+
+:root {
+  --light-purple: #6A22AC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jaldi", sans-serif;
+}
+
+.container-erro {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-erro img{
+  margin-right: 20px;
+}
+
+.container-erro h1{
+  position: relative;
+  font-size: 50px;
+  text-align: center;
+  color: var(--light-purple);
+  width: 627px;
+  line-height: 53px;
+  font-weight: normal;
+  padding-bottom: 20px;
+}
+
+.container-erro h1::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--light-purple);
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+}
+
+.button-outline {
+  display: block;
+  background-color: var(--light-purple);
+  padding: 10px 0px;
+  width: 507px;
+  text-align: center;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 50px auto 0px;
+  font-size: 20px;
+  transition: 100ms linear;
+}
+
+.button-outline:hover {
+  background-color: #440966;
+  color: white;
+}
+
+@media (max-width: 992px){
+  .container-erro{
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .container-erro img{
+    width: 100vw;
+  }
+
+  .container-erro h1{
+    width: 100%;
+    font-size: 40px;
+  }
+
+  .button-outline{
+    width: 100%;
+  }
+}

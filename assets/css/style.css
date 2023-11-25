@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
+:root {
+  --light-purple: #840EC9;
+  --cards-services: #5C287A;
+  --card-buttons: #50007E;
+  --card-equipe-title: #515151
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Jaldi', sans-serif;
+}
+
+/* nav */
+nav{
+  display: flex;
+  align-items: flex-start;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 65px 0px;
+}
+
+.main-content img {
+  width: 500px;
+}
+
+.title-content{
+  width: 480px;
+}
+
+.title-content h2{
+  font-size: 70px;
+}
+
+.title-content p{
+  font-size: 20px;
+}
+
+.button-outline{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding: 5px 0px;
+  border-radius: 30px;
+  border: solid var(--light-purple);
+  color: var(--light-purple);
+  margin-top: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-outline:hover{
+  background-color: var(--light-purple);
+  color: white;
+}
+    
+/* ---------------- Serviços  */
+.container-section{
+  background-color: var(--cards-services);
+  padding: 30px 20px 30px;
+}
+
+.title-section{
+  position: relative;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  width: 308px;
+  margin: 0px auto 50px;
+  font-weight: bold;
+}
+
+.title-section::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+}
+
+.card-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.card-container .card{
+  padding: 32px 23px 19px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 330px;
+}
+
+.card-container img{
+  width: 260px;
+}
+
+.content-card h4{
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.content-card p{
+  font-size: 19px;
+  padding-bottom: 45px;
+}
+
+.button-card-content{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.acessar-button{
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--card-buttons);
+  text-align: center;
+  padding: 5px 20px;
+  border-radius: 10px;
+  transition: 0.1s linear;
+  width: 135px;
+}
+
+.acessar-button:hover{
+  background-color: #25003b;
+}
+
+/* -------------- Empresa */
+.container-empresa{
+  padding: 15px 40px;
+}
+
+.title-section-empresa{
+  position: relative;
+  color:var(--cards-services);
+  font-size: 50px;
+  text-align: center;
+  width: 408px;
+  margin: 30px auto;
+  font-weight: bold;
+}
+
+.title-section-empresa::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--cards-services);
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+}
+
+.sobre-empresa-conteudo{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sobre-empresa-conteudo p{
+  font-size: 28px;
+}
+
+.bold-purple{
+  color: var(--light-purple);
+  font-weight: bold;
+}
+
+.container-empresa img{
+  width: 50%;
+}
+
+/* --------------- Equipes section */
+.container-card-equipes{
+  display: flex;
+  margin: 30px 0px;
+  justify-content: space-around;
+}
+
+.card-perfil-equipe{
+  background-color: white;
+  border-radius: 20px;
+  width: 277px;
+}
+
+.card-perfil-equipe img{
+  object-fit: cover;
+  height: 308px;
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.conteudo-card-equipes{
+  margin: 20px;
+}
+
+.container-card-equipes span{
+  font-size: 20px;
+}
+
+.conteudo-card-equipes h2{
+  color: var(--card-equipe-title);
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.golden-tech-title {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #840ec9 0%,
+    #610a93 25%,
+    #dda3ff 50%,
+    #610a93 75%,
+    #840ec9 100%
+  );
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap");
+
+:root {
+  --light-purple: #840ec9;
+  --card-buttons: #6a22ac;
+}
+
+* {
+  font-family: "Jaldi", sans-serif;
+}
+
+/* container-consulta */
+.container-consulta {
+  padding: 50px;
+}
+
+.container-consulta h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: #6a22ac;
+}
+
+/* Buttons section */
+.container-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.container-consulta span {
+  font-size: 25px;
+  color: #6a22ac;
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.inputs {
+  padding: 0px !important;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.input-field {
+  width: 100%;
+}
+
+/* Tabela */
+.container-table {
+  border: solid #757575 3px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  font-size: 20px;
+}
+
+.container-table th {
+  color: #a1a1a1;
+}
+
+td,
+th {
+  padding: 15px 5px 15px 25px !important;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+tbody tr td {
+  font-weight: bold;
+  color: #757575;
+}
+
+/* Buttons section */
+.button-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card-buttons);
+  font-size: 20px;
+  padding: 8px 0px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  width: 250px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-style:last-child {
+  background-color: transparent;
+  border: solid var(--card-buttons);
+  color: var(--card-buttons);
+  margin-left: 20px;
+}
+
+.button-style:hover {
+  background-color: var(--card-buttons);
+}
+
+.button-style:last-child:hover {
+  background-color: var(--light-purple);
+  color: white;
+}
+
+.btn-small {
+  background-color: #6a22ac !important;
+}
