@@ -1,7 +1,6 @@
 <?php
   include('../includes/security.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

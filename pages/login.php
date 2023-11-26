@@ -15,21 +15,12 @@
 <body>
   <?php
   include('../includes/toast.php');
+
   session_start();
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    $username = 'root';
-    $password = '';
-    $database = 'login';
-    $host = 'localhost';
-
-    $mysqli = new mysqli($host, $username, $password, $database);
-
-    if ($mysqli->connect_error) {
-      header("Location: error.php");
-      die('Falha ao conectar ao banco de dados!' . $mysqli->connect_error);
-    }
+    include('../includes/conectar.php');
 
     $login = $mysqli->real_escape_string($_POST["login"]);
     $password = $mysqli->real_escape_string($_POST["password"]);
@@ -40,28 +31,27 @@
     $result = $mysqli->query($sql_code);
     $usuarios = $result->fetch_assoc();
 
-    if($typeUser == "commonUser"){
-      $_SESSION["id"] = $usuarios["id"];
-      $_SESSION["typeUser"] = $usuarios["typeUser"];
+    if ($result->num_rows == 1) {
+      if (!isset($_SESSION)) {
+        session_start();
+      }
 
-      header("Location: 2fa.php");
-
-    } else {
-      if ($result->num_rows == 1) {
-        if (!isset($_SESSION)) {
-          session_start();
-        }
+      if($typeUser == "commonUser"){
+        $_SESSION["id"] = $usuarios["id"];
+        $_SESSION["typeUser"] = $usuarios["typeUser"];
   
+        header("Location: 2fa.php");
+      } else {
         $_SESSION["id"] = $usuarios["id"];
         $_SESSION["cpf"] = $usuarios["cpf"];
         $_SESSION["login"] = $usuarios["login"];
         $_SESSION["typeUser"] = $usuarios["typeUser"];
   
         header("Location: home.php");
-        
-      } else {
-        echo '<script>toastAlert("Usuário não encontrado!", "error")</script>';
-      }
+      };
+      
+    } else {
+      echo '<script>toastAlert("Usuário não encontrado!", "error")</script>';
     }
   }
   ?>

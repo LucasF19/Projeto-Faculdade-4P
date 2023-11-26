@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="../assets/css/materialize.min.css" />
   <link rel="stylesheet" href="../assets/css/2fa.css">
   <link rel="stylesheet" href="../assets/css/loginPage.css" />
-  <script src="../assets/js/butterup.min.js"></script>
   <link rel="stylesheet" href="../assets/css/butterup.min.css" />
+  <script src="../assets/js/butterup.min.js"></script>
   <script src="../assets/js/script.js"></script>
   <title>Autenticação de dois fatores</title>
 </head>
@@ -18,15 +18,13 @@
 <body>
   <?php
   include('../includes/toast.php');
+
   session_start();
 
-  $username = 'root';
-  $password = '';
-  $database = 'login';
-  $host = 'localhost';
+  unset($_SESSION["login"]);
 
-  $mysqli = new mysqli($host, $username, $password, $database);
-  
+  include('../includes/conectar.php');
+
   $id = $_SESSION["id"];
   $typeUser = $_SESSION["typeUser"];
 
@@ -64,8 +62,8 @@
 
     $respostasCorretas = array(
       $usuarios["motherName"],
-      "2",
-      "3"
+      $usuarios["cellphone"],
+      $usuarios["address"]
     );
 
     return strtolower($respostasCorretas[$indice]);
@@ -80,6 +78,7 @@
 
     if ($respostaFornecida == $respostaCorreta) {
       $_SESSION["login"] = $usuarios["login"];
+      $_SESSION["cpf"] = $usuarios["cpf"];
 
       header("Location: home.php");
     } else {
@@ -103,7 +102,7 @@
       <button class="btn waves-effect waves-light" type="submit" name="action">
         Enviar
       </button>
-      <a href="login.php" class="btn waves-effect waves-light">Voltar</a>
+      <a href="login.php"" class="btn waves-effect waves-light">Voltar</a>
     </div>
   </form>
 </body>

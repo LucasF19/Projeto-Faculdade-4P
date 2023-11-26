@@ -20,17 +20,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-      $username = 'root';
-      $password = '';
-      $database = 'login';
-      $host = 'localhost';
-    
-      $mysqli = new mysqli($host, $username, $password, $database);
-    
-      if ($mysqli->connect_error) {
-        header("Location: error.php");
-        die('Falha ao conectar ao banco de dados!' . $mysqli->connect_error);
-      }
+      include('../includes/conectar.php');
     
       $idUser = $_SESSION["id"];
       $novSenha = $_POST["senha"];
