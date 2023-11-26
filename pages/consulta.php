@@ -73,33 +73,36 @@
           }
 
           $result = $mysqli->query($sql);
+          $numRows = mysqli_num_rows($result);
 
-          while ($row = mysqli_fetch_assoc($result)) {
-            $id = $row['id'];
-            $login = $row['login'];
-            $name = $row['name'];
-            $nascimento = $row['birth'];
-            $endereco = $row['address'];
-            $typeUser = $row['typeUser'];
-
-            if ($typeUser != 'masterUser') {
-              //Formatar data de nascimento
-              $dtNascimento = new DateTime($nascimento);
-              $atDate = new DateTime();
-
-              $diferenca = $dtNascimento->diff($atDate);
-              $idade = $diferenca->y;
-
-              echo "<tr>";
-              echo "<td>$login</td>";
-              echo "<td>$name</td>";
-              echo "<td>$idade</td>";
-              echo "<td>$endereco</td>";
-              echo "<td><a href='?excluir=true&id=$id' class='waves-light btn-small purple'><i class='material-icons left'>delete</i>Excluir</a></td>";
-              echo "</tr>";
-            } else {
-              echo "<td>Não há usuários comuns na tabela</td>";
+          if ($numRows > 1) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              $id = $row['id'];
+              $login = $row['login'];
+              $name = $row['name'];
+              $nascimento = $row['birth'];
+              $endereco = $row['address'];
+              $typeUser = $row['typeUser'];
+  
+              if ($typeUser != 'masterUser') {
+                //Formatar data de nascimento
+                $dtNascimento = new DateTime($nascimento);
+                $atDate = new DateTime();
+  
+                $diferenca = $dtNascimento->diff($atDate);
+                $idade = $diferenca->y;
+  
+                echo "<tr>";
+                echo "<td>$login</td>";
+                echo "<td>$name</td>";
+                echo "<td>$idade</td>";
+                echo "<td>$endereco</td>";
+                echo "<td><a href='?excluir=true&id=$id' class='waves-light btn-small purple'><i class='material-icons left'>delete</i>Excluir</a></td>";
+                echo "</tr>";
+              }
             }
+          } else {
+            echo "<td>Não há usuários comuns na tabela</td>";
           }
           ?>
         </tbody>

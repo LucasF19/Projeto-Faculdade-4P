@@ -18,8 +18,8 @@
 <body>
   <?php
 
-  include('../includes/toast.php');
   include('../includes/conectar.php');
+  include('../includes/toast.php');
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
