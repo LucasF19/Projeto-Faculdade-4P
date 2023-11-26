@@ -85,7 +85,6 @@
               $typeUser = $row['typeUser'];
   
               if ($typeUser != 'masterUser') {
-                //Formatar data de nascimento
                 $dtNascimento = new DateTime($nascimento);
                 $atDate = new DateTime();
   
