@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
   <h1>Tela de login e cadastro</h1>
   <img width="700" alt="Login" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/78192f7b-14ae-4f43-94f4-ee784b080fb3">
   <img width="700" alt="Cadastro" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/a434f40c-e59c-4e94-8e16-3607a70e951a">
