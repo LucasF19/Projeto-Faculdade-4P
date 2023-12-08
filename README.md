@@ -1,7 +1,9 @@
 <div align="center">
-  <h1>Tela de login e cadastro</h1>
-  <img width="700" alt="Login" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/78192f7b-14ae-4f43-94f4-ee784b080fb3">
-  <img width="700" alt="Cadastro" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/a434f40c-e59c-4e94-8e16-3607a70e951a">
+  <h1>Tela de login</h1>
+  <img width="950" alt="Login" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/78192f7b-14ae-4f43-94f4-ee784b080fb3">
+  <br>
+  <h1>Tela de Cadastro</h1>
+  <img width="950" alt="Cadastro" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/a434f40c-e59c-4e94-8e16-3607a70e951a">
   <br>
   <h1>Home</h1>
   <img width="950" alt="home" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/e4441411-3ccf-48ac-a58d-2855d612f7c6">
