@@ -5,7 +5,7 @@
   
   <h1>Home</h1>
   <img width="950" alt="home" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/e4441411-3ccf-48ac-a58d-2855d612f7c6">
-  
+  </br>
   <h1>Consulta</h1>
   <img width="947" alt="consulta" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/50a4a31c-7f0d-4d82-aedc-6a09db0049a7">
   
