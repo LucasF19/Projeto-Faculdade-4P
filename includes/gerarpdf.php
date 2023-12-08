@@ -14,7 +14,7 @@ $dompdf = new Dompdf();
 $dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'landscape');
 
-// Renderize o PDF 
+// Renderize o PDF
 $dompdf->render();
 // Gere o PDF
 $dompdf->stream();

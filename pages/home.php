@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,13 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <title>Home</title>
 </head>
+
 <body>
   <?php
-    include('../includes/menu.php');
-    include('../includes/security.php');
+  include('../includes/menu.php');
+  include('../includes/security.php');
+
+  $typeUser = $_SESSION["typeUser"];
   ?>
   <main class='main-content'>
     <div class="title-content">
@@ -29,16 +33,20 @@
     <h3 class="title-section">Serviços</h3>
 
     <div class="card-container">
-      <div class="card">
-        <img src="../assets/images/college class-amico.png" alt="Escritório">
-        <div class="content-card">
-          <h4>Usuários</h4>
-          <p>Veja a lista de usuários que fazem parte da nossa empresa!</p>
-          <div class="button-card-content">
-            <a href="./consulta.php" class="acessar-button">Acessar</a>
+      <?php
+      if ($typeUser == "masterUser") {
+        echo "<div class='card'>
+          <img src='../assets/images/college class-amico.png' alt='Escritório'>
+          <div class='content-card'>
+            <h4>Usuários</h4>
+            <p>Veja a lista de usuários que fazem parte da nossa empresa!</p>
+            <div class='button-card-content'>
+              <a href='./consulta.php' class='acessar-button'>Acessar</a>
+            </div>
           </div>
-        </div>
-      </div>
+        </div>";
+      }
+      ?>
 
       <div class="card">
         <img src="../assets/images/Server-amico.png" alt="Servidor">
@@ -50,17 +58,21 @@
           </div>
         </div>
       </div>
-
-      <div class="card">
-        <img src="../assets/images/Reset-password.png" alt="Cdeado de senha">
-        <div class="content-card">
-          <h4>Alterar senha</h4>
-          <p>Esqueceu sua senha? Altere com facilidade e praticidade.</p>
-          <div class="button-card-content">
-            <a href="#" class="acessar-button">Acessar</a>
-          </div>
-        </div>
-      </div>
+      <?php
+      if ($typeUser == "commonUser") {
+        echo '<div class="card">
+           <img src="../assets/images/Reset-password.png" alt="Cdeado de senha">
+           <div class="content-card">
+             <h4>Alterar senha</h4>
+             <p>Esqueceu sua senha? Altere com facilidade e praticidade.</p>
+             <div class="button-card-content">
+               <a href="./senha.php" class="acessar-button">Acessar</a>
+             </div>
+           </div>
+         </div>';
+      }
+      ;
+      ?>
     </div>
   </section>
   <section class="container-empresa">
@@ -72,7 +84,8 @@
         <span class="bold-purple">Golden Tech</span>
         oferece uma ampla gama de serviços para atender às necessidades de seus clientes.
         Isso inclui desenvolvimento de software personalizado, consultoria em TI, suporte técnico,
-        segurança cibernética e gerenciamento de sistemas.</p>
+        segurança cibernética e gerenciamento de sistemas.
+      </p>
     </div>
   </section>
   <section class="container-section">
@@ -113,6 +126,7 @@
       </div>
     </div>
   </section>
-  <?php include '../includes/footer.php'?>
+  <?php include '../includes/footer.php' ?>
 </body>
+
 </html>

@@ -18,6 +18,13 @@
   <?php 
     include '../includes/menu.php';
 
+    $typeUser = $_SESSION["typeUser"];
+
+    if($typeUser == "masterUser"){
+      echo '<script>toastAlert("Usuário master não altera senha!", "error")</script>';
+      exit();
+    }
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       include('../includes/conectar.php');

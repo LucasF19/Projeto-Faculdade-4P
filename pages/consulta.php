@@ -24,6 +24,13 @@
   $sql_code = "SELECT * FROM usuarios";
   $result = $mysqli->query($sql_code);
 
+  $typeUser = $_SESSION["typeUser"];
+
+  if($typeUser == "commonUser"){
+    echo '<script>toastAlert("Usuário comum não consulta banco!", "error")</script>';
+    exit();
+  }
+
   if (isset($_GET['excluir']) && isset($_GET['id'])) {
 
     $idUsuarioExcluir = $_GET['id'];
@@ -75,7 +82,7 @@
           $result = $mysqli->query($sql);
           $numRows = mysqli_num_rows($result);
 
-          if ($numRows > 1) {
+          if ($numRows > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
               $id = $row['id'];
               $login = $row['login'];
