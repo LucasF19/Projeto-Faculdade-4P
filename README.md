@@ -1,3 +1,5 @@
+Tela de login e cadastro de usuários usando PHP com banco de dados MySQL
+
 <div align="center">
   <h1>Tela de login</h1>
   <img width="950" alt="Login" src="https://github.com/LucasF19/Projeto-Faculdade-4P/assets/80549542/78192f7b-14ae-4f43-94f4-ee784b080fb3">
